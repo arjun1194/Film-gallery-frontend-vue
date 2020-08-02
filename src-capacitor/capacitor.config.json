@@ -1,0 +1,7 @@
+{
+  "appId": "org.capacitor.quasar.app",
+  "appName": "Ekta Films",
+  "bundledWebRuntime": false,
+  "npmClient": "yarn",
+  "webDir": "www"
+}
