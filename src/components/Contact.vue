@@ -1,15 +1,10 @@
 <template>
     <Layer color="bg-image" title="">
       <template v-slot:default>
-
           <div class="row justify-center">
-            <div class="col-12 q-pa-sm text-center text-h4 q-ma-xl text-weight-light text-bold">For Further Queries Please or Any Other Assistance Feel Free to </div>
-
-            <q-btn label="Contact Us" class="q-mx-xl q-pa-sm q-px-xl" color="primary"/>
-
+            <div class="col-12 q-pa-sm text-center text-h4 q-ma-xl text-weight-light text-bold">For Further Queries or Any Other Assistance Feel Free to </div>
+            <q-btn label="Contact Us" class="q-mx-xl q-pa-sm q-px-xl" color="primary" to="/contact-us"/>
           </div>
-
-
       </template>
     </Layer>
 </template>

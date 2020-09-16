@@ -22,26 +22,29 @@ export default {
     return {
       details:[
         {
-          name:'first',
-          heading:'The Invisible man',
+          name:'Kick',
+          heading:'Kick',
           topSubHeading:'OWN IT ON 4K ULTRA HD, BLU-RAY, DVD & DIGITAL NOW.',
-          imageUrl:'https://www.universalstudios.com/uploads/24805.jpg',
-          trailerLink:''
+          information:'Devi Lal Singh, a typical youth with an anomalous standard of living, tries to find pleasure in whatever he does. He eventually becomes a thief and dons a new name, Devil',
+          imageUrl:require('assets/kick_poster.jpg'),
+          trailerLink:'https://youtu.be/u-j1nx_HY5o'
         },
         {
-          name:'second',
-          heading:'The Fountain',
-          topSubHeading:'WATCH TRAILER NOW.',
-          imageUrl:'https://www.universalstudios.com/uploads/38740.jpg',
-          trailerLink:''
+          name:'Mujhse Shaadi',
+          heading:'Mujhse Shaadi Karogi',
+          topSubHeading:'Visit the site to see More details',
+          information:'Sameer, fast at losing his temper is re-located to Goa where he falls in love with Rani. But Sameer\'s new roommate Sunny, has some plans of his own.',
+          imageUrl:require('assets/mujhse shaadi karogi.jpg'),
+          trailerLink:'https://youtu.be/u-j1nx_HY5o'
         },
         {
-          name:'third',
-          heading:'The Visible Man',
+          name:'Kick',
+          heading:'Kick',
           topSubHeading:'OWN IT ON 4K ULTRA HD, BLU-RAY, DVD & DIGITAL NOW.',
-          imageUrl:'https://www.universalstudios.com/uploads/56979.jpg',
-          trailerLink:''
-        }
+          information:'Devi Lal Singh, a typical youth with an anomalous standard of living, tries to find pleasure in whatever he does. He eventually becomes a thief and dons a new name, Devil',
+          imageUrl:require('assets/kick_poster.jpg'),
+          trailerLink:'https://youtu.be/u-j1nx_HY5o'
+        },
       ]
 
     }

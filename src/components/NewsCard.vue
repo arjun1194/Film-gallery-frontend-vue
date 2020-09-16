@@ -1,12 +1,11 @@
 <template>
  <div class="row">
-
-   <div class="col-12">
-     <img src="https://www.universalstudios.com/uploads/45933.jpg" width="100%"/>
+   <div class="col-lg-12 col-md-6 col-sm-6 ">
+     <img :src="image" width="100%" style="max-height: 280px" onclick="window.location  = this.link"/>
    </div>
-   <div class="col-12 text-subtitle2">Ekta Films </div>
-   <div class="col-12 text-subtitle1"><router-link to="/">‘Jurassic World: Dominion’ Adds Campbell Scott as Key Character from Original Movie</router-link> </div>
-   <div class="col-12 date">25 May 2019</div>
+   <div class="col-12 text-subtitle2 text-grey-6">{{postedBy}}</div>
+   <a :href="link" class="col-12 text-subtitle1 text-white" >{{title}}</a>
+   <div class="col-12 date">{{date}}</div>
  </div>
 </template>
 
@@ -23,7 +22,17 @@
           postedBy:{},
           title:{},
           image:{},
+          link:{}
 
+      },
+
+      methods:{
+          navigateToNews(){
+
+
+              console.log("Item clicked")
+              window.location.href = this.link
+          }
       }
     }
 </script>
