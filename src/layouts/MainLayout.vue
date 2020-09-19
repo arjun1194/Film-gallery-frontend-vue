@@ -1,17 +1,44 @@
 <template>
   <q-layout view="lHh Lpr lFf">
 
-    <q-header class="q-pa-md" reveal elevated>
+    <q-header class="q-pa-md bg-black" reveal elevated>
       <q-toolbar>
         <q-btn v-if="isMobile" flat dense round icon="menu" aria-label="Menu" @click="toggleDrawer"/>
-        <q-toolbar-title>Ekta Films</q-toolbar-title>
+        <q-toolbar-title @click="this.router.push('/')">
+          Ekta Films
+          <q-avatar square  >
+            <img src="../assets/bestest.jpg">
+          </q-avatar>
+        </q-toolbar-title>
         <q-btn v-if="!isMobile" v-for="button in sideButtons"
-               @click="(button.routeType==='scroll')?handleScroll(button.route):gotoRoute(button.route)" class="q-pa-sm"
+               @click="gotoRoute(button.route)" class="q-pa-sm"
                :label="button.label" :key="button.id" dense flat/>
         <q-btn v-if="!isMobile" to="/contact-us" class="q-pa-sm" label="contact us" dense flat/>
       </q-toolbar>
     </q-header>
 
+    <q-drawer
+      v-model="drawer"
+      :width="200"
+      :breakpoint="500"
+      bordered
+      content-class="bg-grey-8"
+    >
+      <q-scroll-area class="fit">
+        <q-list>
+
+          <template v-for="(sideItem, index) in sideButtons">
+            <q-item :key="index" clickable :active="index === selectedItem" v-ripple  @click="sideItemOnClick(index,sideItem.route)">
+              <q-item-section>
+                {{sideItem.label}}
+              </q-item-section>
+            </q-item>
+
+          </template>
+
+        </q-list>
+      </q-scroll-area>
+    </q-drawer>
 
 
     <q-page-container>
@@ -25,7 +52,6 @@
 import {scroll} from 'quasar'
 
 const {getScrollTarget, setScrollPosition} = scroll
-import EssentialLink from 'components/EssentialLink.vue'
 
 export default {
   name: 'MainLayout',
@@ -35,27 +61,26 @@ export default {
   data() {
     return {
       leftDrawerOpen: false,
+      drawer:false,
+      selectedItem:0,
+
 
       sideButtons: [
         {
           label: 'Home',
           route: '/',
-          routeType: 'router'
         },
         {
           label: 'Movies',
-          route: 'films',
-          routeType: 'scroll'
+          route: '/movies',
         },
         {
           label: 'News',
           route: 'films',
-          routeType: 'scroll'
         },
         {
           label: 'About',
           route: '/about',
-          routeType: 'router'
         },
 
       ],
@@ -68,17 +93,16 @@ export default {
   },
   methods: {
     toggleDrawer() {
-      this.leftDrawerOpen = !this.leftDrawerOpen
+      this.drawer = !this.drawer
+    },
+    sideItemOnClick(index,route){
+      this.selectedItem = index
+      this.gotoRoute(route)
     },
     gotoRoute(route) {
       this.$router.push(route)
     },
-    handleScroll(id) {
-      let target = getScrollTarget(this.$refs[id])
-      let offset = this.$refs[id].offsetTop // do not subtract the el.scrollHeight here
-      let duration = 1000
-      setScrollPosition(target, offset, duration)
-    },
+
     showContactDialog() {
 
     }

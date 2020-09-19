@@ -1,13 +1,20 @@
 <template>
 
-        <div class="row" style="font-size: 200px">
-          <div class="col-4 bg-red q-pa-lg"></div>
-          <div class="col-8 text-subtitle1">
-            <div class="row">
-              <div class="col-12 text-h6 text-center">About the Owner - (Matloob Khan)</div>
-              <div class="col-12 text-weight-light q-pa-md" style="font-size: 20px">{{ownerInfo}}</div>
-            </div></div>
-
+        <div class="row">
+          <div class="col-12 text-h5 q-pa-xl text-center">About the Owner - (Matloob Khan)</div>
+          <div class="col-lg-7 col-sm-12 col-xs-12 text-weight-light q-pa-md text-left" style="font-size: 20px; text-align: justify;">{{ownerInfo}}</div>
+          <div class="col-lg-5 col-sm-12 col-xs-12">
+            <div class="flex justify-center">
+              <img src="../assets/about_image.jpg" style="height:600px;width:100%;object-fit: contain"/>
+            </div>
+          </div>
+          <div class="col-12 text-h5 q-pa-xl text-center">About the Company - (Ekta Films)</div>
+          <div class="col-lg-7 col-sm-12 col-xs-12 text-weight-light q-pa-md text-left" style="font-size: 20px; text-align: justify;">{{aboutCompany}}</div>
+          <div class="col-lg-5 col-sm-12 col-xs-12">
+            <div class="flex justify-center  q-pa-md">
+              <img src="../assets/about_company.jpeg" class="self-start" style="width:80%;object-fit: contain"/>
+            </div>
+          </div>
         </div>
       </template>
 
@@ -29,7 +36,18 @@
               ' Jeet,Judwaa,Vijaypath,Diljale,Ghatak,Sabse Bada Khiladi,Mr and Mrs Khiladi,Har Dil Jo Pyaar' +
               ' Karega,Mujhse Shaadi Karogi,Jaaneman,Hey Baby,Kambakht Ishq,Housefull,kick and many' +
               ' more.Many of the films distributed by him have become a golden or silver jubilee making Matloob' +
-              ' Khan one of the biggest Individual Film Distributors in the country.'
+              ' Khan one of the biggest Individual Film Distributors in the country.',
+
+            aboutCompany:'Ekta Films is a Film Distribution,Production and Financing company founded by Matloob Khan in the\n' +
+              'year 1988 in Delhi.The firm has its hub in Delhi,Mumbai and Meerut .The company has its presence\n' +
+              'in the entire cinema network across Delhi,Uttar Pradesh and Uttrakhand.Matloob Khan started the\n' +
+              'business by buying old films for reruns in cinemas, which cultivated into a vast business of film\n' +
+              'distribution.The company distributed most of the movies produced in the 1990s and till date has a\n' +
+              'credit of releasing 108 movies.The company has distributed almost all of the films produced under\n' +
+              'Nadiadwala Grandson Entertainment in the Delhi UP circuit.',
+
+
+
            }
       }
     }

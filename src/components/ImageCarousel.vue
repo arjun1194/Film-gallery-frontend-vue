@@ -1,5 +1,5 @@
 <template>
-  <div class="row text-white ">
+  <div class="row text-white justify-center">
 
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
       <q-carousel animated infinite autoplay v-model="value" @transition="setValue" height="65vh">
@@ -13,7 +13,14 @@
         :heading="details[value].heading"
         :content="details[value].information"
         :route="details[value].trailerLink"
+        :director="details[value].director"
+        :cast="details[value].cast"
+        :producer="details[value].producer"
       />
+    </div>
+
+    <div class="row q-mt-md">
+      <div v-for="(i,index) in details"   style="border:1px solid black;border-radius: 999px;width: 16px;height:16px;margin-left: 8px" :style="cStyle(index)" @click="value=index"></div>
     </div>
 
   </div>
@@ -35,11 +42,16 @@ export default {
     }
   },
   created() {
+
     console.log("Inside Image Caoursel ",this.details)
   },
   methods:{
     setValue(n,o){
       this.value = n
+    },
+    cStyle(index){
+      if (this.value===index) return {background:'white'}
+      else return {background:'grey'}
     }
   },
   props: {

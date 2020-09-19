@@ -4,9 +4,13 @@
       <div class="q-pa-sm " style="font-size: 22px">{{topSubHeading}}</div>
       <div class="text-h3 q-py-sm text-weight-light q-pa-sm">{{heading}}</div>
       <div class="text-h6 q-py-sm text-weight-light q-pa-sm">{{content}}</div>
+      <div class="text-h6 q-py-sm q-pa-sm">Producer: <div class="text-weight-light">{{producer}}</div></div>
+      <div class="text-h6 q-py-sm q-pa-sm">Director: <div class="text-weight-light">{{director}}</div></div>
+      <div class="text-h6 q-py-sm q-pa-sm">Cast: <div class="text-weight-light">{{cast}}</div></div>
+
       <div class=" justify-center">
 
-        <q-btn class="transparent custom-button q-my-md" style="max-width: 50%" label="Watch Trailer" onclick="routeToLink()"/>
+        <q-btn class="transparent custom-button q-my-md" style="max-width: 50%" label="Watch Trailer" @click="routeToLink"/>
       </div>
 
     </div>
@@ -21,12 +25,15 @@ export default {
           topSubHeading:'',
           heading:'',
           content:'',
+          producer:'',
+          director:'',
+          cast:'',
           route:{default:''}
         },
   methods:{
-          routeToLink:function (){
-            alert('button was clicked ')
-             window.location =  this.route
+          routeToLink(){
+
+             window.location.href =  this.route
           }
   }
     }
