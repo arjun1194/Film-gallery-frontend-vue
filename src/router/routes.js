@@ -8,7 +8,9 @@ const routes = [
       { path: '/about', component: () => import('pages/About.vue') },
       { path: '/contact-us', component: () => import('pages/ContactUs.vue') },
       { path: '/movie/1', component: () => import('pages/FilmDetail') },
-      { path: '/movies', component: () => import('pages/Movies') }
+      { path: '/movies', component: () => import('pages/Movies') },
+      { path: '/news', component: () => import('pages/News') }
+
     ]
   },
 

@@ -4,6 +4,7 @@
      <MovieCard
        class="col-lg-3 col-sm-12 col-xs-12 q-mx-md q-my-sm"
        v-for="i in movieData"
+       :key="i.name"
        :star-rating="i.starRating"
        :image-url="i.imageUrl"
        :cast="i.cast"

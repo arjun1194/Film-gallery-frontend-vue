@@ -76,7 +76,7 @@ export default {
         },
         {
           label: 'News',
-          route: 'films',
+          route: '/news',
         },
         {
           label: 'About',
