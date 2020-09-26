@@ -1,10 +1,10 @@
 <template>
   <q-page>
-    <div class="q-pa-xl text-h4 text-center">Contact Us</div>
+    <div class="q-pa-xl text-h4 ">Contact Us</div>
 
-    <div class="row justify-end" style="height: 500px">
+    <div class="row justify-end" >
       <div class="col-lg-4 col-sm-12 col-xs-12 ">
-        <q-card class="q-dialog-plugin" style="width: 100%; height: 100%">
+        <q-card class="q-dialog-plugin q-pa-sm" style="width: 100%; height: 100%">
           <q-card-section>
             <div class="text-subtitle1 text-weight-light">Have Doubts? Let us know. We will get right back to you</div>
           </q-card-section>
@@ -21,8 +21,9 @@
           </q-card-actions>
         </q-card>
       </div>
-      <div class="col-lg-4 col-sm-12 col-xs-12 self-center">
-        <div class="text-center text-h6">
+      <div class="col-lg-4 col-sm-12 col-xs-12 self-center q-my-xl">
+        <div class="text-center text-h5 text-weight-light">Address</div>
+        <div class="text-center text-h6 q-mt-xl">
           Ekta Films,Moti Cinema <br>
           Chandni Chowk,New Delhi-110002
         </div>
@@ -33,13 +34,13 @@
         </div>
 
       </div>
-      <div class="col-lg-4 col-sm-12 col-xs-12 q-pa-lg">
+      <div style="margin-right: 0px">
         <div class="mapouter">
           <div class="gmap_canvas">
-            <iframe width="100%" height="500" id="gmap_canvas"
+            <iframe  :width="mapWidth" height="100%"  id="gmap_canvas"
                     src="https://maps.google.com/maps?q=Ekta%20Films%2CMoti%20Cinema%20Chandni%20Chowk%2CNew%20Delhi-110002&t=&z=15&ie=UTF8&iwloc=&output=embed"
                     frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-            <a href="https://ektafilms.com">Ekta Films</a></div>
+            </div>
 
         </div>
       </div>
@@ -58,7 +59,13 @@ export default {
     name:'',
     email:'',
     message:"",
-  }}
+  }},
+  computed:{
+    mapWidth(){
+      let x = this.$q.screen
+       return (x.xs || x.sm) ? x.width : '100%'
+    }
+  }
 }
 </script>
 

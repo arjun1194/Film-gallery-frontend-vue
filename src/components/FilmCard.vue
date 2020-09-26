@@ -1,5 +1,5 @@
 <template>
-  <q-card flat bordered class="my-card">
+  <q-card  flat bordered class="my-card" @click.native="navigate('/movies')">
     <img :src="imageUrl" style="max-height: 300px">
     <q-card-section>
       <div class="text-subtitle1" >{{title}}</div>
@@ -17,8 +17,8 @@
           imageUrl:''
         },
       methods:{
-          navigate(){
-            this.$router.push('/film/1')
+          navigate(path){
+            this.$router.push(path)
           }
       }
     }

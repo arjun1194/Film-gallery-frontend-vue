@@ -2,7 +2,7 @@
   <Layer title="Movies" >
     <template v-slot:default >
       <div class="row justify-center q-px-lg">
-        <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 q-pa-sm" v-for="i in films.data">
+        <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2 q-pa-sm" v-for="i in films.data">
             <FilmCard :title="i.title" :subtitle="i.subtitle" :image-url="i.imageUrl" />
         </div>
       </div>
@@ -38,7 +38,7 @@
                   imageUrl:require('../assets/heropanti.jpg')
                 },
                 {
-                  title:'Heyy Baby',
+                  title:'Heyy Babyy',
                   subtitle:'2007',
                   imageUrl:require('../assets/heyy baby.jpg')
                 },
@@ -63,7 +63,7 @@
                   imageUrl:require('../assets/judwaa 2.jpg')
                 },
                 {
-                  title:'Jaan-e-man',
+                  title:'Jaan-e-mann',
                   subtitle:'2006',
                   imageUrl:require('../assets/jaaneman.jpg')
                 },

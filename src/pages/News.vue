@@ -1,103 +1,67 @@
 <template>
-  <div>
-      <div class="row" style="height: 93.5vh">
-      <q-splitter class="col-12" v-model="splitterModel">
-        <template v-slot:before>
-          <q-tabs
-            v-model="tab"
-            vertical
-            class="text-teal">
-            <q-tab v-for="(award,year) in movies" :name="year" :label="year"/>
-          </q-tabs>
-        </template>
-        <template v-slot:after>
-          <q-tab-panels
-            v-model="tab"
-            animated
-            swipeable
-            vertical
-            transition-prev="jump-up"
-            transition-next="jump-up">
-            <q-tab-panel v-for="(award,year) in movies" :name="year">
-              <AwardTabDetail  v-for="i in award" :year="year" :poster="i.poster" :movie-name="i.movieName" :awards="i.awards" />
-            </q-tab-panel>
-          </q-tab-panels>
-        </template>
+  <div class="row">
+    <div class="col-12 text-left q-px-xl q-py-lg  text-h4">News</div>
 
-      </q-splitter>
+    <div class="col-lg-4 col-sm-12 col-xs-12 col-md-4" v-for="i in news" >
+      <NewsCard :image="i.image" :title="i.title" :body="i.body" :caption="i.caption"/>
+      </div>
     </div>
-
-  </div>
 
 </template>
 
 <script>
-import Award from "components/news/Award";
-import AwardTabDetail from "components/news/AwardTabDetail";
+import NewsCard from "components/news/NewsCard";
 export default {
   name: "News",
-  components: {AwardTabDetail, Award},
+  components: {NewsCard},
   data() {
     return {
+      news:[
+        {
+          image:'https://cdn.discordapp.com/attachments/698188890615447592/759497312568344596/event_nvg.jpeg',
+          title:'Sajid Nadiadwala and Matloob Khan at an event.',
+          caption:'Producer Sajid Nadiadwala and Matloob Khan at a  party hosted for celebration in Juhu,Mumbai.',
 
-      tab: '1',
-      splitterModel: 1,
-      movies: {
-        "2019": [
-          {
-            "movieName": "Baaghi 2",
-            "poster": "https://www.nadiadwalagrandson.com/sites/default/files/MoviePoster/Baaghi2-New-Poster%20copy.jpg",
-            "awards": [
-              {
-                "title": "Zee Cine Award for Best Action",
-                "awardPhoto": "https://www.nadiadwalagrandson.com/sites/default/files/AwardImage/zee.jpg",
-                "awardee": ""
-              }
-            ]
-          }
-        ],
-        "2018": [
-          {
-            "movieName": "Baaghi 2",
-            "poster": "https://www.nadiadwalagrandson.com/sites/default/files/MoviePoster/Baaghi2-New-Poster%20copy.jpg",
-            "awards": [
-              {
-                "title": "Star Screen Awards Award for Best Action",
-                "awardPhoto": "https://www.nadiadwalagrandson.com/sites/default/files/AwardImage/Star-Screen-Awards2.png",
-                "awardee": ""
-              }
-            ]
-          }
-        ],
-        "2017": [
-          {
-            "movieName": "Dishoom",
-            "poster": "https://www.nadiadwalagrandson.com/sites/default/files/MoviePoster/30-x-40_Walking_Merged--Twitter%20copy.jpg",
-            "awards": [
-              {
-                "title": "IIFA Award for Best Performance in comic role",
-                "awardPhoto": "https://www.nadiadwalagrandson.com/sites/default/files/AwardImage/iifa_1.jpg",
-                "awardee": "Varun Dhawan"
-              }
-            ]
-          }
-        ],
-        "2016": [
-          {
-            "movieName": "Baaghi",
-            "poster": "https://www.nadiadwalagrandson.com/sites/default/files/MoviePoster/Baaghi%20Poster%202%20FINAL%20copy.JPG",
-            "awards": [
-              {
-                "title": "Stardust Award for Best Actor in a Negative Role",
-                "awardPhoto": "https://www.nadiadwalagrandson.com/sites/default/files/AwardImage/stardust.png",
-                "awardee": "Sudheer Babu Posani - Baaghi"
-              }
-            ]
-          }
-        ],
-      }
+        },
+        {
+          image:'https://cdn.discordapp.com/attachments/698188890615447592/759496151111696424/asdasdas.jpg',
+          title:'News article about Matloob Khan.',
+          caption:'Talking Business article about Khan’s recent visit to Mumbai.',
 
-  }
+        },
+        {
+          image:'https://cdn.discordapp.com/attachments/698188890615447592/759495797393326090/unnamed.jpg',
+          title:'News article about Matloob Khan.',
+          caption:'News regarding Khan’s visit to Mumbai in 1998.',
+
+        },
+        {
+          image:'https://cdn.discordapp.com/attachments/698188890615447592/759496159411830804/asdasda.jpg',
+          title:'Matloob Khan wishes his friend Sajid Nadiadwala a very Happy Birthday.',
+          caption:'Matloob Khan wishes a very Happy Birthday to Producer Sajid Nadiadwala in Bombay Times.',
+
+        },
+
+        {
+          image:require('../assets/tigernews.jpg'),
+          title:'Tiger Shroff and Sajid Nadiadwala look suave and dapper as they pose for FHM magazine',
+          caption:' 19 Mar 2020',
+          link:'https://www.nadiadwalagrandson.com/news/recent-news/tiger-shroff-and-sajid-nadiadwala-look-suave-and-dapper-they-pose-fhm-magazine'
+        },
+        {
+          image:require('../assets/nadiadvala_grandson_news.jpeg'),
+          title:'Nadiadwala Grandson Entertainment alter their iconic logo to promote social distancing',
+          caption:' Mar 25, 2020',
+          link:'https://www.bollywoodhungama.com/amp/news/features/nadiadwala-grandson-entertainment-alter-iconic-logo-promote-social-distancing/'
+        },
+        {
+          image:require('../assets/kick2news.jpg'),
+          title:'Kick 2: Salman Khan, Jacqueline Fernandez Starrer’s Script Locked By Sajid Nadiadwala',
+          caption:' August 11, 2020 8:44 PM',
+          link:'https://www.india.com/entertainment/bollywood-news-kick-2-salman-khan-jacqueline-fernandez-starrers-script-locked-by-sajid-nadiadwala-4108688/'
+        },
+      ]
+    }
   }
 }
 </script>

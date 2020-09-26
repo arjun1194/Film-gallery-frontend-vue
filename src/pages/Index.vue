@@ -1,10 +1,9 @@
 <template>
   <q-page class="">
-    <ImageCarousel :details="details"/>
+    <ImageCarousel   :details="details"/>
     <Films ref="films"/>
     <News ref="news"/>
     <Contact/>
-    <MainFooter ref="footer"/>
   </q-page>
 </template>
 
@@ -35,13 +34,13 @@ export default {
         {
           name:'Mujhse Shaadi',
           heading:'Mujhse Shaadi Karogi',
-          topSubHeading:'Visit the site to see More details',
+          topSubHeading:'OWN IT ON 4K ULTRA HD, BLU-RAY, DVD & DIGITAL NOW.',
           information:'Sameer, fast at losing his temper is re-located to Goa where he falls in love with Rani. But Sameer\'s new roommate Sunny, has some plans of his own.',
           producer:'Sajid Nadiadwala',
           director:'David Dhawan',
           cast:'Salman Khan, Akshay Kumar',
           imageUrl:require('assets/mujhse_shaadi_banner.jpg'),
-          trailerLink:'https://youtu.be/u-j1nx_HY5o'
+          trailerLink:'https://youtu.be/Pc2PTRafvzg'
         },
         {
           name:'Heyyy',

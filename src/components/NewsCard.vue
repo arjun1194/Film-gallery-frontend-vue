@@ -1,7 +1,7 @@
 <template>
  <div class="row">
-   <div class="col-lg-12 col-md-6 col-sm-6 ">
-     <img :src="image" width="100%" style="height: 280px;" onclick="window.location  = this.link"/>
+   <div class="col-12 ">
+     <img :src="image" width="100%" style="height: 280px;" @click.native="navigateToNews"/>
    </div>
    <div class="col-12 text-subtitle2 text-grey-6">{{postedBy}}</div>
    <a :href="link" class="col-12 text-subtitle1 text-white" >{{title}}</a>

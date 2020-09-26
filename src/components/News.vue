@@ -3,27 +3,27 @@
     <template v-slot:default >
       <div class="row justify-center">
         <!--Important News-->
-        <div class="col-xs-12 col-sm-12 col-lg-4 q-pa-md text-black" v-for="i in news.important">
+        <div class="col-xs-12 col-sm-6 col-lg-4 col-md-6 q-pa-md text-black" v-for="i in news.important">
           <NewsCard
             :date="i.date"
             :image="i.image"
             :link="i.link"
             :title="i.title"
-            posted-by="Salman Ali Khan"
+            posted-by=""
 
 
           />
         </div>
         <div class="col-12">
-          <!--Less Important news items-->
+          <!--Less Important award items-->
           <div class="row justify-center">
-            <div class="col-xs-12 col-sm-12 col-lg-3 q-pa-md text-black" v-for="i in news.normal">
+            <div class="col-xs-12 col-sm-4 col-lg-3 col-md-4 q-pa-md text-black" v-for="i in news.normal">
               <NewsCard
                 :date="i.date"
                 :image="i.image"
                 :link="i.link"
                 :title="i.title"
-                posted-by="Salman Ali Khan"
+                posted-by=""
               />
             </div>
           </div>
@@ -51,7 +51,7 @@
                   image:require('../assets/event_nvg.jpeg'),
                   title:'Sajid Nadiadwala and Matloob Khan at an event.',
                   date:'February 5, 2017',
-                  link:''
+                  link:'https://ektafilms.com/news'
                 },
                 {
                   image:require('../assets/judwa2news.jpg'),

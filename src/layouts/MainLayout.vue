@@ -1,19 +1,18 @@
 <template>
   <q-layout view="lHh Lpr lFf">
 
-    <q-header class="q-pa-md bg-black" reveal elevated>
+    <q-header class="bg-black q-py-md q-pl-sm " reveal elevated>
       <q-toolbar>
         <q-btn v-if="isMobile" flat dense round icon="menu" aria-label="Menu" @click="toggleDrawer"/>
-        <q-toolbar-title @click="this.router.push('/')">
-          Ekta Films
-          <q-avatar square  >
-            <img src="../assets/bestest.jpg">
+        <q-toolbar-title>
+          <q-btn size="lg" class="something" label="EKTA FILMS" flat to="/"/>
+          <q-avatar square  to="/">
+              <img src="../assets/bestest.jpg">
           </q-avatar>
         </q-toolbar-title>
         <q-btn v-if="!isMobile" v-for="button in sideButtons"
                @click="gotoRoute(button.route)" class="q-pa-sm"
                :label="button.label" :key="button.id" dense flat/>
-        <q-btn v-if="!isMobile" to="/contact-us" class="q-pa-sm" label="contact us" dense flat/>
       </q-toolbar>
     </q-header>
 
@@ -43,6 +42,7 @@
 
     <q-page-container>
       <router-view/>
+      <main-footer/>
     </q-page-container>
 
   </q-layout>
@@ -50,13 +50,14 @@
 
 <script>
 import {scroll} from 'quasar'
+import MainFooter from "components/MainFooter";
 
 const {getScrollTarget, setScrollPosition} = scroll
 
 export default {
   name: 'MainLayout',
 
-  components: {},
+  components: {MainFooter},
 
   data() {
     return {
@@ -76,12 +77,21 @@ export default {
         },
         {
           label: 'News',
-          route: '/news',
+          route: '/award',
+        },
+        {
+          label: 'Awards',
+          route: '/awards',
         },
         {
           label: 'About',
           route: '/about',
         },
+        {
+          label: 'Contact Us',
+          route: '/contact-us',
+        },
+
 
       ],
 

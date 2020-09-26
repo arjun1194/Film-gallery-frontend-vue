@@ -29,7 +29,7 @@
         Producer: {{ producer }}
       </div>
       <div class="text-subtitle1">
-        Director: {{ producer }}
+        Director: {{ director }}
       </div>
       <div class="text-caption text-grey q-mt-sm">
         Cast: {{cast}}
